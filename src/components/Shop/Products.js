@@ -22,7 +22,7 @@ const Products = (props) => {
   },[alert])
   return (
     <section className={classes.products}>
-      <h2>Our Excellent Service</h2>
+      <h2>What we offer</h2>
       <ul>
         {data.map(product=><ProductItem
           key={product.id}

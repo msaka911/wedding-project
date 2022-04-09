@@ -4,7 +4,7 @@ import classes from './MainHeader.module.css';
 const MainHeader = (props) => {
   return (
     <header className={classes.header}>
-      <h1>Get a Quote</h1>
+      <h1>惠诚家政</h1>
       <nav>
         <ul>
           <li>

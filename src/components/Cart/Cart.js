@@ -7,7 +7,7 @@ const Cart = (props) => {
   return (
   <Card className={classes.cart}>
       <h2>Book appointment with us</h2>
-      <Form/>
+      <Form clicked={props.clicked}/>
     </Card>
   );
 };

@@ -45,15 +45,18 @@ const Form = (props) => {
         alert.show("Please fill all contents")
     }
   }
+  
+ 
+
+  
   return (
     <Fragment>
-      <Card>
+      <Card clicked={props.clicked}>
         <form
         //   onFocus={formFocusedHandler}
           className={classes.form}
           onSubmit={submitFormHandler}
         >
-        
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
             <input type='text' placeholder='Email' id='email' ref={emailInputRef} />
