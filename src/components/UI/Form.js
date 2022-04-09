@@ -34,7 +34,7 @@ const Form = (props) => {
         })
     }
     else{
-        alert.show("Please fill all contents")
+        alert.error("Please fill all contents")
     }
   }
   
