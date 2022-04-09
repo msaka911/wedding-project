@@ -2,11 +2,11 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from './App';
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import { types, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 
 
 
 
 
-ReactDOM.render(<AlertProvider template={AlertTemplate}><App /></AlertProvider>, document.getElementById('root'));
+ReactDOM.render(<AlertProvider type={types.SUCCESS}  position={positions.MIDDLE} template={AlertTemplate}><App /></AlertProvider>, document.getElementById('root'));

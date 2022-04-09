@@ -5,18 +5,16 @@ import Card from './Card';
 import classes from './Form.module.css';
 
 const Form = (props) => {
-
   
   const alert = useAlert()
-
   const emailInputRef = useRef();
   const nameInputRef = useRef();
   const contactRef=useRef();
   const appointmentRef=useRef();
-
+  
   function submitFormHandler(event) {
-    const axios = require('axios');
     event.preventDefault();
+    const axios = require('axios');
     const enteredEmail = emailInputRef.current.value;
     const enteredName = nameInputRef.current.value;
     const enteredContact=contactRef.current.value;
@@ -29,26 +27,16 @@ const Form = (props) => {
             appointment:enteredAppointment
         })
         .then(function (response) {
-        console.log(response)
-        document.getElementById("email").reset();
-        document.getElementById("name").reset();
-        document.getElementById("appointment").reset();
-        document.getElementById("contact").reset();
-        alert.show("Thanks!We will process your request asap")
+        alert.show("Thanks! \n We will process your request asap")
         })
-        
         .catch(function (error) {
-          alert.show("cannot send the data")
+          alert.error("cannot send the data")
         })
-   
     }
     else{
         alert.show("Please fill all contents")
     }
   }
-  
- 
-
   
   return (
     <Fragment>
