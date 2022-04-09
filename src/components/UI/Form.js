@@ -34,6 +34,7 @@ const Form = (props) => {
         document.getElementById("name").reset();
         document.getElementById("appointment").reset();
         document.getElementById("contact").reset();
+        alert.show("Thanks!We will process your request asap")
         })
         
         .catch(function (error) {
