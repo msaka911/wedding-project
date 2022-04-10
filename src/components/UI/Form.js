@@ -3,23 +3,27 @@ import { useAlert } from 'react-alert'
 
 import Card from './Card';
 import classes from './Form.module.css';
+import validator from 'validator';
 
 const Form = (props) => {
-  
+   
+
+
   const alert = useAlert()
   const emailInputRef = useRef();
   const nameInputRef = useRef();
   const contactRef=useRef();
   const appointmentRef=useRef();
-  
-  function submitFormHandler(event) {
+
+  function submitFormHandler(event) { 
     event.preventDefault();
     const axios = require('axios');
     const enteredEmail = emailInputRef.current.value;
     const enteredName = nameInputRef.current.value;
     const enteredContact=contactRef.current.value;
     const enteredAppointment=appointmentRef.current.value;
-    if(enteredAppointment&&enteredContact&&enteredName&&enteredEmail){
+    
+    if(enteredAppointment&&validator.isMobilePhone(enteredContact,['en-CA'])&&enteredName&&validator.isEmail(enteredEmail)){
         axios.post('https://mybackend1.herokuapp.com/appointment',{
             email:enteredEmail,
             name: enteredName,
@@ -34,7 +38,7 @@ const Form = (props) => {
         })
     }
     else{
-        alert.error("Please fill all contents")
+        alert.error("Please fill valid contents")
     }
   }
   
