@@ -23,6 +23,23 @@ const Form = (props) => {
     const enteredContact=contactRef.current.value;
     const enteredAppointment=appointmentRef.current.value;
     
+    if(!validator.isMobilePhone(enteredContact,['en-CA'])){
+      document.getElementById('contact').style.borderColor='red';
+      alert.error("Please enter valid phone number",{onClose:()=>{
+        document.getElementById('contact').style.borderColor='black';
+        
+      }})
+      return
+    }
+
+    if(!validator.isEmail(enteredEmail)){
+      document.getElementById('email').style.borderColor='red';
+      alert.error("Please enter valid email",{onClose:()=>{
+        document.getElementById('email').style.borderColor='black';
+      }})
+      return
+    }
+
     if(enteredAppointment&&validator.isMobilePhone(enteredContact,['en-CA'])&&enteredName&&validator.isEmail(enteredEmail)){
         axios.post('https://mybackend1.herokuapp.com/appointment',{
             email:enteredEmail,
@@ -32,6 +49,10 @@ const Form = (props) => {
         })
         .then(function (response) {
         alert.show("Thanks! \n We will process your request asap")
+        document.getElementById('name').value="";
+        document.getElementById('email').value="";
+        document.getElementById('contact').value="";
+        document.getElementById('appointment').value=""
         })
         .catch(function (error) {
           alert.error("cannot send the data")
