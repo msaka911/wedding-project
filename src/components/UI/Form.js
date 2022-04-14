@@ -53,7 +53,7 @@ const Form = (props) => {
     const enteredLivingroom=livingroom.current.value;
     const enteredOther=otherOption.current.value
     //--------------check other option---------------------//
-    var other;
+    var other="";
     if(selected.find((select)=>
     select.value==="other"
   )){
@@ -92,7 +92,6 @@ const Form = (props) => {
       return
     }
 
-    
     if(validator.isMobilePhone(enteredContact,['en-CA'])&&validator.isEmail(enteredEmail)){
         axios.post('https://mybackend1.herokuapp.com/appointment',{
           email:enteredEmail,
@@ -147,7 +146,6 @@ const Form = (props) => {
           <div className={classes.control}>
          <div className={classes.selection}>
          <label><BedIcon/> Bedroom
-         
          <input
           type="number"
           min="0"
