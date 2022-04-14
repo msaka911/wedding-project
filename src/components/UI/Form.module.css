@@ -69,12 +69,14 @@
 .selection{
   display: flex;
   justify-content: space-between;
-  width: 500px;
+  width: fit-content;
+  
 }
 .selection input{
   width: 3.8rem ;
 }
 
 .selection label{
+  margin-right: 1.7rem;
   vertical-align: baseline
 }
