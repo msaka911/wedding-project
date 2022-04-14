@@ -14,7 +14,6 @@ const Products = (props) => {
   useEffect(()=>{
     axios.get('https://mybackend1.herokuapp.com/products/')
   .then(function (response) {
-    console.log(response.data)
      setData(response.data)})
   .catch(function (error) {
     alert.show("cannot load the page")
