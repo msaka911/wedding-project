@@ -8,3 +8,13 @@
   max-height: 0%;
 
 }
+
+.media{
+  margin: 0.2rem auto;
+  border-radius: 6px;
+  background-color: white;
+  padding: 0.5rem;
+  width: 95%;
+  max-width: 50rem;
+  max-height: 0%;
+}

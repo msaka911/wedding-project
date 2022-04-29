@@ -1,0 +1,20 @@
+.slider div img{
+     width: 28rem;
+     z-index: 1;
+     /* transform: translateX(30px); */
+     border-radius: 0.4rem;
+     height:18rem;
+     border:0rem;
+}
+
+
+.slider{
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+    justify-self: center;
+}
+
+.slider:focus{
+    list-style-image: none;
+}

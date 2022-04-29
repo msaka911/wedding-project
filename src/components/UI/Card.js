@@ -1,4 +1,5 @@
 import classes from './Card.module.css';
+import { isMobile } from 'react-device-detect';
 
 const Card = (props) => {
 
@@ -8,7 +9,7 @@ const Card = (props) => {
     //   className={`${classes.card} ${props.clicked ? classes.slidein : ''}`}
     // >
      <section
-      className={classes.card}
+      className={isMobile?classes.media:classes.card}
     >
       {props.children}
     </section>

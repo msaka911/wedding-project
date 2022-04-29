@@ -10,6 +10,7 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 import Card from './Card';
 import classes from './Form.module.css';
 import validator from 'validator';
+import Overlay from "../Overlay"
 
 const Form = (props) => {
 
@@ -125,12 +126,13 @@ const Form = (props) => {
 
 
   return (
-    <Fragment>
-      <Card clicked={props.clicked}>
+    <Overlay clicked={props.clicked} setClick={props.setClick}>
+      <Card >
         <form
           className={classes.form}
           onSubmit={submitFormHandler}
         >
+          <h2>Quote Form</h2>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
             <input type='text' placeholder='Email' id='email' ref={emailInputRef} />
@@ -198,7 +200,7 @@ const Form = (props) => {
           
         </form>
       </Card>
-    </Fragment>
+    </Overlay>
   );
 };
 
