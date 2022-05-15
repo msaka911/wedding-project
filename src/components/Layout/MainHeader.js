@@ -1,17 +1,12 @@
-import CartButton from '../Cart/CartButton';
+
 import classes from './MainHeader.module.css';
+import CelebrationIcon from '@mui/icons-material/Celebration';
 
 const MainHeader = (props) => {
   return (
     <header className={classes.header}>
-      <h1>惠诚家政</h1>
-      <nav>
-        <ul>
-          <li>
-            <CartButton clicked={props.clicked} setClick={props.setClick}/>
-          </li>
-        </ul>
-      </nav>
+      <CelebrationIcon sx={{ fontSize: "50px" }} style={{ color: '#F33A6A' }}/>
+      <h1>Raymond & Billie Wedding </h1>
     </header>
   );
 };

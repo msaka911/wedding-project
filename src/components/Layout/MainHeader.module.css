@@ -4,11 +4,10 @@
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .header h1 {
-  color: white;
+  color: #F33A6A;
 }
 
 .header ul {
